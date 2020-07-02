@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Nodejs",
+		"Vintage"
+	],
+	"theme": "Adaptive.sublime-theme"
+}
