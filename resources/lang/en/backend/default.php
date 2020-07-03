@@ -122,4 +122,8 @@ return [
 	'tag' => 'Tag',
 	'.env' => '.env',
 	'change' => 'Change',
+	'breaf' => 'Breaf',
+	'video' => 'Video',
+	'edit_post' => 'Edit Post',
+	'publish' => 'Publish',
 ];

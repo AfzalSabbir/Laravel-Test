@@ -82,11 +82,6 @@ class ImageUploadHelper
   {
     if(Request::hasFile($image)){
       if (is_array($name)) {
-        /*
-          $filename = $name . '.' . $file->getClientOriginalExtension();
-          $location = ($target_location.'/'.$filename);
-          Image::make($file)->resize($width, $height)->save($location);
-        */
 
         $filename = $name[1]. '.'.$file->getClientOriginalExtension();
         $location = ($target_location.'/'.$filename);
@@ -97,6 +92,14 @@ class ImageUploadHelper
         Image::make($file)->resize($width, $height)->save($location);
 
         return $filename;
+      } else {
+        
+          $filename = $name . '.' . $file->getClientOriginalExtension();
+          $location = ($target_location.'/'.$filename);
+          Image::make($file)->resize($width, $height)->save($location);
+          
+          return $filename;
+        
       }
     }
   }

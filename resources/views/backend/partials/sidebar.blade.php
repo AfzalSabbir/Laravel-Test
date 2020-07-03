@@ -2,7 +2,7 @@
 <aside class="app-sidebar {{ $site_setting->custom_scroll == 1 ? 'of-y-hidden':'' }}">
   <div {{ $site_setting->custom_scroll == 1 ? 'data-simplebar':'' }} class="h-100">
 
-    @includeWhen(env('APP_DEVELOPER_TOOL'), 'backend.pages.root.Importants.developer')
+    {{-- @includeWhen(env('APP_DEVELOPER_TOOL'), 'backend.pages.root.Importants.developer') --}}
 
     {{--
       <div class="d-none">

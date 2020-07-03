@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Helpers\QueryHelper;
+use App\Models\Post;
 use Countries;
 use Unirest;
 use Auth;
@@ -22,26 +23,11 @@ class HomeController extends Controller
     */
     public function index()
     {
+      $total_posts    = Post::get()->count();
+      $active_posts   = Post::where('status', 1)->get()->count();
+      $inactive_posts = Post::where('status', 0)->get()->count();
 
-      // $response_1 = \Unirest\Request::get("https://iata-and-icao-codes.p.rapidapi.com/airlines",
-      //   array(
-      //     "X-RapidAPI-Host" => "iata-and-icao-codes.p.rapidapi.com",
-      //     "X-RapidAPI-Key" => "86f2d52f7dmsh837e78b0f987086p16c824jsn3702aec80779"
-      //   )
-      // );
-      // $raw_body = json_decode($response_1->raw_body);
-      // $body     = $response_1->body;
-      // $headers  = $response_1->headers;
-
-      // $response = Unirest\Request::get("https://cometari-airportsfinder-v1.p.rapidapi.com/api/airports/by-code?code=BG%252C+VQ",
-      //   array(
-      //     "X-RapidAPI-Host" => "cometari-airportsfinder-v1.p.rapidapi.com",
-      //     "X-RapidAPI-Key" => "86f2d52f7dmsh837e78b0f987086p16c824jsn3702aec80779"
-      //   )
-      // );
-      // dd($response_1, $response);
-
-      return view('backend.pages.index');
+      return view('backend.pages.index', compact('total_posts', 'active_posts', 'inactive_posts'));
     }
 
     public function chart()

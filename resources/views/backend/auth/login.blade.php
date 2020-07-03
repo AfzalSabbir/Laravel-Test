@@ -78,12 +78,12 @@
         </div>
       @endif
       <div class="form-group">
-        <label class="control-label">{{ __('backend/default.username') }}</label>
-        <input class="form-control" type="text" value="{{ (request()->token) ? \App\Helpers\LoginHelper::get_username(request()->token) : '' }}" placeholder="Username" name="username" autofocus required>
+        <label class="control-label">{{ __('backend/default.username') }} (admin)</label>
+        <input class="form-control" type="text" value="{{ (request()->token) ? \App\Helpers\LoginHelper::get_username(request()->token) : 'admin' }}" placeholder="Username" name="username" autofocus autocomplete="off" required>
       </div>
       <div class="form-group">
-        <label class="control-label">{{ __('backend/default.password') }}</label>
-        <input class="form-control" type="password" value="{{ (request()->token) ? \App\Helpers\LoginHelper::get_password(request()->token) : '' }}" placeholder="Password" name="password" required>
+        <label class="control-label">{{ __('backend/default.password') }} (123456)</label>
+        <input class="form-control" type="password" value="{{ (request()->token) ? \App\Helpers\LoginHelper::get_password(request()->token) : '123456' }}" placeholder="Password" name="password" autocomplete="off" required>
       </div>
       <div class="form-group">
         <div class="utility">

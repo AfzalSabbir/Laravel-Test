@@ -16,46 +16,37 @@
 <div class="form-row">
 
   <div class="col-md-4">
-    <a href="" @click.prevent class="dashbox dash-1 pb-2 pt-0">
-      <i class="fa fa-users fa-3x d-block mx-auto py-2"></i>
-      <div class="mt-2">
-        <h3 class="mb-0">Users</h3>
-        <p class="mb-0">101</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4">
-    <a href="" @click.prevent class="dashbox dash-2 pb-2 pt-0">
-      <i class="fa fa-cubes fa-3x d-block mx-auto py-2"></i>
-      <div class="mt-2">
-        <h3 class="mb-0">Categories</h3>
-        <p class="mb-0">224</p>
-      </div>
-    </a>
-  </div>
-  <div class="col-md-4">
     <a href="" @click.prevent class="dashbox dash-3 pb-2 pt-0">
-      <i class="fa fa-envelope fa-3x d-block mx-auto py-2"></i>
+      <i class="fa fa-newspaper-o fa-3x d-block mx-auto py-2"></i>
       <div class="mt-2">
-        <h3 class="mb-0">SMS</h3>
-        <p class="mb-0">1209</p>
+        <h3 class="mb-0">Total Post</h3>
+        <p class="mb-0">{{ $total_posts }}</p>
       </div>
     </a>
   </div>
-  <div class="col-md-4 d-none">
-    <a href="" @click.prevent class="dashbox dash-4 pb-2 pt-0">
-      <i class="fa fa-star fa-3x d-block mx-auto py-2"></i>
+  <div class="col-md-4">
+    <a href="" @click.prevent class="dashbox dash-7 pb-2 pt-0">
+      <i class="fa fa-check fa-3x d-block mx-auto py-2"></i>
       <div class="mt-2">
-        <h3 class="mb-0">Stars</h3>
-        <p class="mb-0">812</p>
+        <h3 class="mb-0">Active Post</h3>
+        <p class="mb-0">{{ $active_posts }}</p>
+      </div>
+    </a>
+  </div>
+  <div class="col-md-4">
+    <a href="" @click.prevent class="dashbox dash-1 pb-2 pt-0">
+      <i class="fa fa-times fa-3x d-block mx-auto py-2"></i>
+      <div class="mt-2">
+        <h3 class="mb-0">Inactive Post</h3>
+        <p class="mb-0">{{ $inactive_posts }}</p>
       </div>
     </a>
   </div>
 </div>
 
-<hr>
 
-<div class="form-row">
+<div class="form-row d-none">
+  <hr>
   <div class="col-md-3">
     <a href="" @click.prevent class="dashbox dash-12 py-0 d-flex text-left">
       <i class="fa fa-users fa-4x p-3 justify-content-center align-content-center"></i>
@@ -94,9 +85,9 @@
   </div>
 </div>
 
-<hr>
 
-<div class="form-row">
+<div class="form-row d-none">
+  <hr>
   <div class="col-md-6 col-lg-3">
     <div class="widget-small info coloured-icon">
       <i class="icon fa fa-users fa-3x"></i>

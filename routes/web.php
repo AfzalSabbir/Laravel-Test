@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-	return view('welcome');
+	$posts = \App\Models\Post::where('status', 1)->get()->groupBy('section');
+	return view('post', compact('posts'));
+})->name('post');
+
+Route::get('/post/{slug}', function ($slug) {
+	$row = \App\Models\Post::where('slug', $slug)->where('status', 1)->first();
+	if(!$row) abort(404);
+	return view('post_view', compact('row'));
 });
 
 Route::group(['prefix' => '/sessionStatus'], function() {
@@ -297,6 +304,20 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/edit/{encrypted_id}', 'Backend\ExampleModalController@update')->name('admin.example_modal.update');	
         Route::get('/delete/{encrypted_id}', 'Backend\ExampleModalController@delete')->name('admin.example_modal.delete');	
     });
+	
+    /**	
+    * Post	
+    **/	
+    Route::group(['prefix' => 'post'], function(){	
+        Route::get('/', 'Backend\PostController@index')->name('admin.post.index');	
+        Route::get('/add', 'Backend\PostController@add')->name('admin.post.add');	
+        Route::post('/add', 'Backend\PostController@store')->name('admin.post.store');	
+        Route::get('/view/{encrypted_id}', 'Backend\PostController@view')->name('admin.post.view');	
+        Route::get('/edit/{encrypted_id}', 'Backend\PostController@edit')->name('admin.post.edit');	
+        Route::post('/edit/{encrypted_id}', 'Backend\PostController@update')->name('admin.post.update');
+        Route::get('/publish/{encrypted_id}', 'Backend\PostController@publish')->name('admin.post.publish');	
+        Route::get('/delete/{encrypted_id}', 'Backend\PostController@delete')->name('admin.post.delete');	
+    });	
 	
 });
 

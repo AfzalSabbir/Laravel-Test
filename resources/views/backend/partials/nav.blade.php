@@ -29,9 +29,9 @@
       <ul class="app-custom-nav pl-0">
         @foreach($left_top_menu_4 as $key => $menu_4)
           @if(in_array($key, $my_menu))
-            @if(!empty($menu_4['route']) && ($menu_4['route']=='home' && env('APP_FRONTEND')))
+            @if(!empty($menu_4['route']) && ($menu_4['route']=='post' && env('APP_FRONTEND')))
             <li>
-              <a class="app-nav__custom__item" href="{{ !empty($menu_4['route']) ? route($menu_4['route']):'#' }}" target="{{ (!empty($menu_4['route']) && $menu_4['route'] == 'home') ? '_blank':'' }}">
+              <a class="app-nav__custom__item" href="{{ !empty($menu_4['route']) ? route($menu_4['route']):'#' }}" target="{{ (!empty($menu_4['route']) && $menu_4['route'] == 'post') ? '_blank':'' }}">
                 <i class="{{ $menu_4['icon'] }}"></i>
               </a>
             </li>
@@ -67,7 +67,7 @@
                         :
                         '#'
                     }}"
-              target="{{ (!empty($menu_2['route']) && $menu_2['route'] == 'home') ? '_blank':'' }}"
+              target="{{ (!empty($menu_2['route']) && $menu_2['route'] == 'post') ? '_blank':'' }}"
               title="{{ (($lang == 'bn') ? 'Click for english':'বাংলার জন্য ক্লিক করুন') }}"
             >
               <i class="{{ $menu_2['icon'] }}">
