@@ -50,7 +50,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `username`, `admin_role`, `language`, `photo`, `password`, `remember_token`, `status`, `trash`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Super Admin', 'super@gmail.com', 'superadmin', 1, 'bn', 'public/images/admins/1585631767.jpg', '$2y$10$3490jDIzM0C7InM4Z6r2seWDb7ZtA8ZDNbvWT1X1F/E/NtqENxOmW', 'BvTkyn9pcOW5S274WymHWJmudhtRuEMaPFNcq1HZDtiCkOei5119YOhPeWUr', 1, 0, '2019-03-25 01:00:00', '2020-07-02 18:24:17', NULL),
+(1, 'My Super Admin', 'mysuper@gmail.com', 'myadminsuper', 1, 'bn', 'public/images/admins/1585631767.jpg', '$2y$10$3490jDIzM0C7InM4Z6r2seWDb7ZtA8ZDNbvWT1X1F/E/NtqENxOmW', 'BvTkyn9pcOW5S274WymHWJmudhtRuEMaPFNcq1HZDtiCkOei5119YOhPeWUr', 1, 0, '2019-03-25 01:00:00', '2020-07-02 18:24:17', NULL),
 (2, 'Admin', 'admin@gmail.com', 'admin', 2, 'bn', 'public/images/admins/1585632020.png', '$2y$10$zxGPra1cDNS14Ctvx4OO4.etmnxE/F.oNzwSfbkkegXTOXpeYtK4O', 'g6JcoLQ3zFxFsk5vP6FpyKxmgXXaabG7tW6KyWwLwzsI6oDlXMAAz1u8bTDr', 1, 0, '2019-03-25 01:00:00', '2020-07-02 18:36:41', NULL),
 (3, 'aaaaaa', 'afzalsabbir.bd@gmail.com', 'aaaaaa', 3, 'en', NULL, '$2y$10$P1rFOIiR1hB4IdUDBw/KKenlpz9LK80jAw/IWulwNUXF6hnc90lzu', NULL, 1, 0, '2019-04-25 13:46:07', '2019-04-25 13:46:07', NULL),
 (4, 'bbbbbb', 'afzalbd1@gmail.comk', 'bbbbbb', 3, 'en', NULL, '$2y$10$wpvJp1iVMxNM6Tkzn9IRwe6CftljT2xXkj13euFuV.mJorisuC17y', NULL, 1, 0, '2019-04-25 13:47:19', '2019-04-25 13:47:19', NULL),
